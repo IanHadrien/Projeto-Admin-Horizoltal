@@ -1,17 +1,24 @@
 <template>
-<div class="main-wrapper">
+<div class="main-wrapper" style="width: 100vw;
+                                height: 100vh;
+                                display: flex;
+                                justify-content: center ;
+                                align-items: center"
+                                >
 
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" 
-             style="background:url(../assets/images/big/auth-bg.jpg) no-repeat center center;">
+             style="background-image: url(../assets/images/big/auth-bg.jpg) no-repeat center center;">
 
             <div class="auth-box">
-                <div id="loginform">
+                <div id="loginform"  style="display: block">
+
                     <div class="logo">
                         <span class="db">
                           <img src="../assets/images/logos/logo-icon.png" alt="logo" />
                         </span>
                         <h5 class="font-medium mb-3">Sign In to Admin</h5>
                     </div>
+
                     <!-- Form -->
                     <div class="row">
                         <div class="col-12">
@@ -24,7 +31,7 @@
                                     </div>
                                     <input type="text" 
                                            class="form-control form-control-lg" 
-                                           placeholder="Username" 
+                                           placeholder="Nome do usuário" 
                                            aria-label="Username" 
                                            aria-describedby="basic-addon1">
                                 </div>
@@ -37,7 +44,7 @@
                                     </div>
                                     <input type="text" 
                                            class="form-control form-control-lg" 
-                                           placeholder="Password" 
+                                           placeholder="Senha" 
                                            aria-label="Password" 
                                            aria-describedby="basic-addon1">
                                 </div>
@@ -45,9 +52,9 @@
                                     <div class="col-md-12">
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                            <label class="custom-control-label" for="customCheck1">Remember me</label>
+                                            <label class="custom-control-label" for="customCheck1">Lembre de mim</label>
                                             <a href="javascript:void(0)" id="to-recover" class="text-dark float-right">
-                                                <i class="fa fa-lock mr-1"></i> Forgot pwd?
+                                                <i class="fa fa-lock mr-1"></i> Esqueceu pwd?
                                             </a>
                                         </div>
                                     </div>
@@ -55,7 +62,7 @@
                                 <div class="form-group text-center">
                                     <div class="col-xs-12 pb-3">
                                         <button class="btn btn-block btn-lg btn-info" type="submit">
-                                          Log In
+                                          Conecte-se
                                         </button>
                                     </div>
                                 </div>
@@ -73,18 +80,26 @@
                                 </div>
                                 <div class="form-group mb-0 mt-2">
                                     <div class="col-sm-12 text-center">
-                                        Don't have an account? <a href="authentication-register1.html" class="text-info ml-1"><b>Sign Up</b></a>
+                                        Não tem uma conta? 
+                                        <a id="inscreva-se" class="text-info ml-1">
+                                          <b>Inscrever-se</b>
+                                        </a>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div id="recoverform">
+
+                <div id="Registro1" style="display: none">
+                    <Autenticacao_Registro1 />
+                </div>
+      
+                <div id="recoverform" style="display: none">
                     <div class="logo">
                         <span class="db"><img src="../assets/images/logos/logo-icon.png" alt="logo" /></span>
-                        <h5 class="font-medium mb-3">Recover Password</h5>
-                        <span>Enter your Email and instructions will be sent to you!</span>
+                        <h5 class="font-medium mb-3">Recuperar Senha</h5>
+                        <span>Digite seu email e as instruções serão enviadas para você!</span>
                     </div>
                     <div class="row mt-3">
                         <!-- Form -->
@@ -92,18 +107,19 @@
                             <!-- email -->
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input class="form-control form-control-lg" type="email" required="" placeholder="Username">
+                                    <input class="form-control form-control-lg" type="email" required="" placeholder="Seu email">
                                 </div>
                             </div>
                             <!-- pwd -->
                             <div class="row mt-3">
                                 <div class="col-12">
-                                    <button class="btn btn-block btn-lg btn-danger" type="submit" name="action">Reset</button>
+                                    <button class="btn btn-block btn-lg btn-danger" type="submit" name="action">Redefinir</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
+
             </div>
 
         </div>
@@ -113,18 +129,30 @@
 </template>
 
 <script>
+import Autenticacao_Registro1 from './Autenticacao-Registro1.vue'
 
 export default {
   name: 'Autenticacao_Login1',
 
+  components: {
+    Autenticacao_Registro1
+  },
+
   mounted() {
     document.querySelector('#to-recover').addEventListener("click", function() {
-      document.querySelector("#loginform").slideUp();
-      document.querySelector("#recoverform").fadeIn();
+        document.querySelector("#loginform").style.display = "none";
+        document.querySelector("#recoverform").style.display = "block";
     });
-  }
+
+    document.querySelector('#inscreva-se').addEventListener("click", function() {
+        document.querySelector("#Registro1").style.display = "block";
+        document.querySelector("#loginform").style.display = "none";
+    });
+
+  },
 }
 </script>
 
 <style>
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css");
 </style>
