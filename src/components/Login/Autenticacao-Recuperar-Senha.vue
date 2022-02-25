@@ -2,11 +2,11 @@
     <div class="main-wrapper">
         
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" 
-            style="background:url(../assets/images/big/auth-bg.jpg) no-repeat center center;">
+            style="background:url(../../assets/images/big/auth-bg.jpg) no-repeat center center;">
             <div class="auth-box">
                 <div>
                     <div class="logo">
-                        <span class="db"><img src="../assets/images/logos/logo-icon.png" alt="logo" /></span>
+                        <span class="db"><img src="../../assets/images/logos/logo-icon.png" alt="logo" /></span>
                         <h5 class="font-medium mb-3">Recover Password</h5>
                     </div>
                     <!-- Form -->

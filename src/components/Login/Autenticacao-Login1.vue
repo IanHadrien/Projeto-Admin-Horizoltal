@@ -7,14 +7,14 @@
                                 >
 
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" 
-             style="background-image: url(../assets/images/big/auth-bg.jpg) no-repeat center center;">
+             style="background-image: url(../../assets/images/big/auth-bg.jpg) no-repeat center center;">
 
             <div class="auth-box">
                 <div id="loginform"  style="display: block">
 
                     <div class="logo">
                         <span class="db">
-                          <img src="../assets/images/logos/logo-icon.png" alt="logo" />
+                          <img src="../../assets/images/logos/logo-icon.png" alt="logo" />
                         </span>
                         <h5 class="font-medium mb-3">Sign In to Admin</h5>
                     </div>
@@ -97,7 +97,7 @@
       
                 <div id="recoverform" style="display: none">
                     <div class="logo">
-                        <span class="db"><img src="../assets/images/logos/logo-icon.png" alt="logo" /></span>
+                        <span class="db"><img src="../../assets/images/logos/logo-icon.png" alt="logo" /></span>
                         <h5 class="font-medium mb-3">Recuperar Senha</h5>
                         <span>Digite seu email e as instruções serão enviadas para você!</span>
                     </div>
